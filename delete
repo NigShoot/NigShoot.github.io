@@ -1,0 +1,49 @@
+<button onclick="a()"><h1>stop</h1></button>
+<button onclick="i()"><h1>cycle instrument</h1></button>
+<h1>song: Axel F - Crazy Frog</h1>
+<table cellpadding=0 border=1 cellspacing=0>
+<tbody>
+<tr>
+<td bgcolor=black>HELLO ROB
+<tr>
+<td bgcolor=red><font color=red>HELLO ROB
+<tr>
+<td bgcolor=yellow><font color=yellow>HELLO ROB
+<script>
+var b=new AudioContext()
+var c=b.currentTime
+var d=b.createOscillator()
+d.type='sawtooth'
+var e=function(f,g){d.frequency.setValueAtTime(f,c+g)}
+d.connect(b.destination)
+d.start()
+e(349,0)
+e(415,0.5)
+e(349,0.9)
+e(0,1)
+e(349,1.4)
+e(466,1.8)
+e(349,2.2)
+e(311,2.6)
+e(349,3)
+e(523,3.5)
+e(349,4)
+e(0,4.1)
+e(349,4.5)
+e(554,4.9)
+e(523,5.3)
+e(415,5.7)
+e(349,6.1)
+e(523,6.5)
+e(698,6.9)
+e(349,7.3)
+e(311,7.7)
+e(261,8.1)
+e(391,8.5)
+e(349,8.9)
+var a=function(){d.stop()}
+var i=function(){var j=d.type
+if(j==='sawtooth'){d.type='square'}
+if(j==='square'){d.type='triangle'}
+if(j==='triangle'){d.type='sawtooth'}}
+</script>
