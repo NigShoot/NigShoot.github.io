@@ -17,7 +17,7 @@ var d=b.createOscillator()
 d.type='sawtooth'
 var e=function(f,g){d.frequency.setValueAtTime(f,c+g)}
 d.connect(b.destination)
-d.start()
+var k=function(){d.start()}
 e(349,5)
 e(415,5.5)
 e(349,5.9)
